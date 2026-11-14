@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Team, TeamId } from "../../../core/types/game";
-import { addScore } from "../../../core/scoring/scoring";
+import { addScore, resetPhaseScores } from "../../../core/scoring/scoring";
 import { Scoreboard } from "../../../components/Scoreboard";
 import { usePersistentState } from "../../../core/hooks/usePersistentState";
 import { useWarmupStore } from "../store/warmupStore";
@@ -70,6 +70,20 @@ export function WarmupPage({ teams }: Props) {
     setFinished(false);
     transitionLock.current = false;
   }, []);
+
+  const restartRound = () => {
+    if (
+      !window.confirm(
+        "Làm lại Vòng 1? Tất cả đội được thi lại và điểm Vòng 1 về 0.",
+      )
+    ) {
+      return;
+    }
+    resetPhaseScores("warmup");
+    setUsedTeamIds([]);
+    setUsedSetIds([]);
+    resetTurn();
+  };
 
   const selectTeam = useCallback(
     (teamId: TeamId) => {
@@ -352,6 +366,14 @@ export function WarmupPage({ teams }: Props) {
       </header>
 
       <div className="scoreboard-toggle-row">
+        {!active && (
+          <button
+            className="ghost-button scoreboard-toggle"
+            onClick={restartRound}
+          >
+            ↻ LÀM LẠI VÒNG 1
+          </button>
+        )}
         <button
           className="ghost-button scoreboard-toggle"
           onClick={() =>
