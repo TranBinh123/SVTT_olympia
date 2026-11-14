@@ -27,7 +27,7 @@ npm run preview
 | 3 – Tăng tốc | `acceleration` | Câu hỏi hình ảnh, giành quyền trả lời, có đồng hồ |
 | 4 – Về đích | `finish` | 4 gói × 5 câu (10/10/20/20/30đ), Ngôi sao hy vọng, cướp điểm |
 
-4 đội cố định: 🔧 Ban Kỹ thuật (xanh lá), 🧑‍🍳 Ban Ẩm thực (đỏ), ⚙️ Ban Vận hành (vàng), 🤝 Ban Do Giám đốc quản lý (xanh dương).
+Cố định **4 đội**. **Tên và màu đội đổi được** ở Admin Khởi động hoặc Admin Xếp hạng (mục "Tên & màu các đội chơi"): có gợi ý màu theo ngũ hành (Mộc/Hỏa/Thổ/Thủy/Kim) và bảng chọn màu tự do; không cho hai đội trùng màu. Mặc định: ĐỘI 1–4 (xanh lá, đỏ, vàng, xanh dương). Đổi tên/màu không ảnh hưởng điểm và tiến trình; Reset điểm test giữ nguyên tên/màu.
 
 ### Vòng 1 – Khởi động
 1. MC chọn đội (chuột hoặc phím `1`–`4`). Đội đã thi bị khóa.
