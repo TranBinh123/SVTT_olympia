@@ -51,7 +51,7 @@ export function WarmupControls({
 
       <button
         className="pause-button"
-        disabled={disabled}
+        disabled={disabled && !paused}
         onClick={onPause}
       >
         {paused ? "▶ TIẾP TỤC" : "Ⅱ TẠM DỪNG"}{" "}
